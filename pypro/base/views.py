@@ -1,5 +1,6 @@
-from django.http import HttpResponse
+from django.http import HttpResponse  # uso implícito
+from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse('<html><body>Olá Django!</body></html>', content_type='text')
+    return render(request, 'base/home.html')
