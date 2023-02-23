@@ -1,3 +1,4 @@
 DEBUG=False
 SECRET_KEY= 'Não tenho aqui porque vai ser só local, mas é importante'
 ALLOWED_HOSTS = 127.0.0.1, localhost
+INTERNAL_IPS = 127.0.0.1
