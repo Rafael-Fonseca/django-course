@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'pypro.wsgi.application'
 
 # Configuração Django Debug Toolbar
 
-INTERNAL_IPS=config('INTERNAL_IPS', cast=Csv(), default="127.0.0.1")
+INTERNAL_IPS = config('INTERNAL_IPS', cast=Csv(), default="127.0.0.1")
 
 if DEBUG:
     INSTALLED_APPS.append('debug_toolbar')

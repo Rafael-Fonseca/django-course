@@ -8,7 +8,7 @@ from django.contrib.auth.forms import (
     UserChangeForm,
     UserCreationForm,
 )
-from django.contrib.auth.models import Group
+# from django.contrib.auth.models import Group
 from django.core.exceptions import PermissionDenied
 from django.db import router, transaction
 from django.http import Http404, HttpResponseRedirect
@@ -34,7 +34,7 @@ class UserAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {"fields": ("first_name", "email", "password")}),
         (_("Permissions"), {"fields": ("is_active", "is_staff", "is_superuser",
-                                        "groups", "user_permissions",),},),
+                                       "groups", "user_permissions",), },),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
     add_fieldsets = (
@@ -49,7 +49,7 @@ class UserAdmin(admin.ModelAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
     change_password_form = AdminPasswordChangeForm
-    list_display = ( "email", "first_name", "is_staff")
+    list_display = ("email", "first_name", "is_staff")
     list_filter = ("is_staff", "is_superuser", "is_active", "groups")
     search_fields = ("first_name", "email")
     ordering = ("first_name",)
